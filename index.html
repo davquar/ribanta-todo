@@ -10,16 +10,34 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <header>
-        <h1>RIBANTA TO-DO</h1>
-        <P>Benvenuti nella tua to-do list, clicca sul pulsante per creare una nuova lista :D</P>
-    </header>
-
-    <div id="content">
-      <button id="btn-createList" >+  Premi qui per creare una nuova checklist</button>
-        <div id="board">
-            nessuna check list creata :(
-        </div>  
+    <div class="container">
+        <header>
+            <h1>RIBANTA TO-DO</h1>
+            <P>Benvenuti nella tua to-do list, clicca sul pulsante per creare una nuova lista :D</P>
+        </header>
+    
+        <div id="content">
+          <button id="btn-createList">+ Nuova checklist</button>
+            <div id="board">
+                <div class="checklist">
+                    <div class="name smallTitle">Spesa</div>
+                    <div class="tasks">
+                        <div class="row">
+                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
+                            <div class="task-name">Pane</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
+                            <div class="task-name">Latte</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task2-checkbox" id="task2-checkbox">
+                            <div class="task-name">Pecora</div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>    
     </div>
 </body>
 </html>

@@ -1,3 +1,30 @@
 * {
     font-family: 'Roboto', 'Arial', sans-serif;
 }
+
+.container {
+    margin: 0 auto;
+    width: 500px;
+}
+
+/** CHECKLISTS **/
+.task-name {
+    display: inline-block;
+}
+
+.smallTitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/** CONTROLS **/
+#btn-createList {
+    border: 1px solid #1e1e1e1e;
+    background: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

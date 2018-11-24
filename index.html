@@ -20,7 +20,7 @@
             <div id="board">
                 <div class="checklist">
                     <div class="header">
-                        <div class="name smallTitle">Spesa</div>
+                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);">Spesa</div>
                         <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
                     </div>
                     <div class="tasks">
@@ -38,13 +38,13 @@
                         </div>
                     </div>
                     <div class="menu-content displayNone">
-                        <a href="#">Rinomina</a>
-                        <a href="#">Elimina</a>
+                        <a href="#" class="rename">Rinomina</a>
+                        <a href="#" class="remove">Elimina</a>
                     </div>
                 </div>
                 <div class="checklist">
                     <div class="header">
-                        <div class="name smallTitle">Studiare</div>
+                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);">Studiare</div>
                         <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
                     </div>
                     <div class="tasks displayNone">
@@ -62,8 +62,8 @@
                         </div>
                     </div>
                     <div class="menu-content show">
-                        <a href="#">Rinomina</a>
-                        <a href="#">Elimina</a>
+                        <a href="#" class="rename">Rinomina</a>
+                        <a href="#" class="remove">Elimina</a>
                     </div>
                 </div>
             </div>  

@@ -20,7 +20,14 @@
           <button id="btn-createList">+ Nuova checklist</button>
             <div id="board">
                 <div class="checklist">
-                    <div class="name smallTitle">Spesa</div>
+                    <div class="header">
+                        <div class="name smallTitle">Spesa</div>
+                        <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
+                        <div class="menu-content">
+                            <a href="#" onclick="rename()">Rinomina</a>
+                            <a href="#" onclick="remove()">Elimina</a>
+                        </div>
+                    </div>
                     <div class="tasks">
                         <div class="row">
                             <input type="checkbox" name="task0-checkbox" id="task0-checkbox">

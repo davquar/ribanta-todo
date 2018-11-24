@@ -1,30 +1,63 @@
 * {
-    font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: #222;
 }
 
 .container {
-    margin: 0 auto;
-    width: 500px;
+  margin: 0 auto;
+  width: 500px;
+}
+
+#board {
+  display: -ms-grid;
+  display: grid;
+  gap: 15px;
 }
 
 /** CHECKLISTS **/
+.checklist {
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.checklist .header div {
+  display: inline-block;
+}
+
+.checklist .header .menu-content {
+  display: none;
+  position: absolute;
+}
+
+.checklist .menu {
+  float: right;
+}
+
 .task-name {
-    display: inline-block;
+  display: inline-block;
 }
 
 .smallTitle {
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 5px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 0 5px 0;
 }
 
 /** CONTROLS **/
-#btn-createList {
-    border: 1px solid #1e1e1e1e;
-    background: none;
-    outline: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    font-weight: bold;
+button {
+  margin: 15px 0;
 }
+
+#btn-createList {
+  border: 1px solid #333;
+  background: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/*# sourceMappingURL=main.css.map */

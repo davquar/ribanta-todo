@@ -23,17 +23,40 @@
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+.checklist .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .checklist .header div {
   display: inline-block;
 }
 
-.checklist .header .menu-content {
-  display: none;
-  position: absolute;
+.checklist .menu-content a {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #333;
 }
 
-.checklist .menu {
-  float: right;
+.checklist .menu-content a:first-of-type {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 15px;
+}
+
+.checklist .menu-content a:last-of-type {
+  padding-top: 15px;
 }
 
 .task-name {
@@ -59,5 +82,14 @@ button {
   padding: 5px 10px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+/** UTILITIES **/
+.displayNone {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

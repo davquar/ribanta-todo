@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
-    <script src="app.js"></script>
 </head>
 <body>
     <div class="container">
@@ -23,10 +22,6 @@
                     <div class="header">
                         <div class="name smallTitle">Spesa</div>
                         <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
-                        <div class="menu-content">
-                            <a href="#" onclick="rename()">Rinomina</a>
-                            <a href="#" onclick="remove()">Elimina</a>
-                        </div>
                     </div>
                     <div class="tasks">
                         <div class="row">
@@ -42,9 +37,38 @@
                             <div class="task-name">Pecora</div>
                         </div>
                     </div>
+                    <div class="menu-content displayNone">
+                        <a href="#">Rinomina</a>
+                        <a href="#">Elimina</a>
+                    </div>
+                </div>
+                <div class="checklist">
+                    <div class="header">
+                        <div class="name smallTitle">Studiare</div>
+                        <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
+                    </div>
+                    <div class="tasks displayNone">
+                        <div class="row">
+                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
+                            <div class="task-name">Algebra</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
+                            <div class="task-name">Basi</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task2-checkbox" id="task2-checkbox">
+                            <div class="task-name">Bottoni</div>
+                        </div>
+                    </div>
+                    <div class="menu-content show">
+                        <a href="#">Rinomina</a>
+                        <a href="#">Elimina</a>
+                    </div>
                 </div>
             </div>  
         </div>    
     </div>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -44,8 +44,7 @@ function notEditable(){
 }
 
 function getColor(col){
-	var colorTaken=document.getElementById(col).value;
-	document.getElementById("cl1").style.backgroundColor=colorTaken;
+	document.getElementById("cl1").style.backgroundColor=col;
 }
 
 menuButtons.forEach(btn => btn.addEventListener("click", toggleChecklistMenu));

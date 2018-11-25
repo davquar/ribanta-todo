@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>RIBANTA TO-DO</title>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <div class="container">
@@ -18,7 +20,7 @@
         <div id="content">
           <button id="btn-createList">+ Nuova checklist</button>
             <div id="board">
-                <div class="checklist">
+                <div class="checklist" id="cl1">
                     <div class="header">
                         <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()" >Spesa</div>
                         <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
@@ -39,11 +41,11 @@
                     </div>
                     <div class="menu-content displayNone">
                         <a href="#" class="rename">Rinomina</a>
-                        <a href="#" class="changeColor">Cambia colore</a>
+                        <a href="#" onclick="document.getElementById('id01').style.display='block'" class="w3-button" >Cambia colore</a>
                         <a href="#" class="remove">Elimina</a>
                     </div>
                 </div>
-                <div class="checklist">
+                <div class="checklist" id="cl2">
                     <div class="header">
                         <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Studiare</div>
                         <div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
@@ -70,6 +72,18 @@
             </div>  
         </div>    
     </div>
+    <div class="w3-container">
+        <div id="id01" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container">
+              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+              <h2>SCEGLI UN COLORE</h2>
+                <input type="color" id="colorChosen" value="Colore">
+                <input type="button" id="okColor" value="OK" onclick="getColor('colorChosen');document.getElementById('id01').style.display='none';">
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="app.js"></script>
 </body>
 </html>

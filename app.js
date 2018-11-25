@@ -43,6 +43,11 @@ function notEditable(){
 	name.blur();
 }
 
+function getColor(col){
+	var colorTaken=document.getElementById(col).value;
+	document.getElementById("cl1").style.backgroundColor=colorTaken;
+}
+
 menuButtons.forEach(btn => btn.addEventListener("click", toggleChecklistMenu));
 renameButtons.forEach(btn => btn.addEventListener("click", toggleRename));
 removeButtons.forEach(btn => btn.addEventListener("click", deleteChecklist));

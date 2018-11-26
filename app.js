@@ -37,8 +37,17 @@ function deleteChecklist(event) {
 	checklist.parentNode.removeChild(checklist);
 }
 
+function notEditable(){
+	const name = event.path[2].querySelector(".header .name");
+	name.contentEditable = false;
+	name.blur();
+}
+
+function getColor(col){
+	document.getElementById("cl1").style.backgroundColor=col;
+}
+
 menuButtons.forEach(btn => btn.addEventListener("click", toggleChecklistMenu));
 renameButtons.forEach(btn => btn.addEventListener("click", toggleRename));
 removeButtons.forEach(btn => btn.addEventListener("click", deleteChecklist));
-
 checklistNames.forEach(div => div.addEventListener("keydown", keyDown));

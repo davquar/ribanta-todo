@@ -6,7 +6,7 @@ function newChecklist() {
 	board.innerHTML += `<div class="checklist">
 	<div class="header">
 		<div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()" >Nuova checklist</div>
-		<div class="menu"><a href="#"><img src="icons/rounded-menu.svg" alt="Menu"></a></div>
+		<a href="#"><img src="icons/rounded-menu.svg" class="menu" alt="Menu"></a>
 	</div>
 	<div class="tasks"></div>
 	<div class="menu-content displayNone">
@@ -15,6 +15,8 @@ function newChecklist() {
 		<a href="#" class="remove">Elimina</a>
 	</div>
 </div>`;
+	// call it with null event, to set the focus on the name of the newly added checklist
+	toggleRename(null);
 }
 
 function toggleChecklistMenu(event) {
@@ -33,7 +35,9 @@ function toggleChecklistMenu(event) {
 }
 
 function toggleRename(event) {
-	const name = event.path[2].querySelector(".header .name");
+	// if the event is null, it means that toggleRename has been called by newChecklist
+	// in that case, just select the last checklist and set the focus on its name.
+	const name = event ? event.path[2].querySelector(".header .name") : board.querySelector(".checklist:last-of-type").querySelector(".header .name");
 	name.contentEditable = true;
 	name.focus();
 }

@@ -1,11 +1,7 @@
 /* eslint-disable no-console */
 const newChecklistButton = document.querySelector("#btn-createList");
 const board = document.querySelector("#board");
-/* const menuButtons = document.querySelectorAll(".menu a");
-const renameButtons = document.querySelectorAll(".menu-content a.rename");
-const removeButtons = document.querySelectorAll(".menu-content a.remove");
-const checklistNames = document.querySelectorAll(".header .name");
- */
+
 function newChecklist() {
 	board.innerHTML += `<div class="checklist">
 	<div class="header">
@@ -59,7 +55,7 @@ function getColor(col){
 
 function handleBoardClicks(event) {
 	if (event.target.matches(".menu")) toggleChecklistMenu(event);
-	if (event.target.matches(".menu-content a.rename")) toggleRename(event);
+	if (event.target.matches(".menu-content a.rename") || event.target.matches(".header .name")) toggleRename(event);
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
 }
 

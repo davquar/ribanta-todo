@@ -48,9 +48,10 @@
   text-decoration: none;
   font-size: 0.8em;
   color: #333;
+  padding-top: 15px;
 }
 
-.checklist .menu-content a:first-of-type {
+.checklist .menu-content a:not(:last-of-type) {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 15px;
 }

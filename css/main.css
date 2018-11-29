@@ -60,6 +60,11 @@
   padding-top: 15px;
 }
 
+.checklist .color-picker .color-box {
+  width: 20px;
+  height: 20px;
+}
+
 .task-name {
   display: inline-block;
 }
@@ -92,5 +97,49 @@ button {
 
 .show {
   display: block;
+}
+
+.bg-red {
+  background-color: #F44336;
+}
+
+.bg-pink {
+  background-color: #E91E63;
+}
+
+.bg-purple {
+  background-color: #9C27B0;
+}
+
+.bg-blue {
+  background-color: #2196F3;
+}
+
+.bg-cyan {
+  background-color: #00BCD4;
+}
+
+.bg-green {
+  background-color: #8BC34A;
+}
+
+.bg-yellow {
+  background-color: #FFEB3B;
+}
+
+.bg-orange {
+  background-color: #FF5722;
+}
+
+.bg-brown {
+  background-color: #795548;
+}
+
+.bg-grey {
+  background-color: #9E9E9E;
+}
+
+.bg-dark {
+  background-color: #212121;
 }
 /*# sourceMappingURL=main.css.map */

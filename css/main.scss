@@ -2,6 +2,18 @@ $primary-color: #222;
 $primary-color-lighter: #333;
 $light-color: #e3e3e3;
 
+$red: #F44336;
+$pink: #E91E63;
+$purple: #9C27B0;
+$blue: #2196F3;
+$cyan: #00BCD4;
+$green: #8BC34A;
+$yellow: #FFEB3B;
+$orange: #FF5722;
+$brown: #795548;
+$grey: #9E9E9E;
+$dark: #212121;
+
 $font-stack: 'Roboto', 'Arial', sans-serif;
 
 $box-shadow-heavy: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -60,6 +72,13 @@ $box-shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             }
         }
     }
+
+    .color-picker {
+        .color-box {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 
 .task-name {
@@ -94,3 +113,48 @@ button {
 .show {
     display: block;
 }
+
+.bg-red {
+    background-color: $red;
+}
+ 
+.bg-pink {
+    background-color: $pink;
+}
+ 
+.bg-purple {
+    background-color: $purple;
+}
+ 
+.bg-blue {
+    background-color: $blue;
+}
+ 
+.bg-cyan {
+    background-color: $cyan;
+}
+ 
+.bg-green {
+    background-color: $green;
+}
+ 
+.bg-yellow {
+    background-color: $yellow;
+}
+ 
+.bg-orange {
+    background-color: $orange;
+}
+ 
+.bg-brown {
+    background-color: $brown;
+}
+ 
+.bg-grey {
+    background-color: $grey;
+}
+ 
+.bg-dark {
+    background-color: $dark;
+}
+ 

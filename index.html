@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" media="all" href="css/main.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
     <div class="container">
@@ -69,21 +68,44 @@
                         <a href="#" class="remove">Elimina</a>
                     </div>
                 </div>
+                <div class="checklist" id="cl2">
+                    <div class="header">
+                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Colorare!</div>
+                        <a href="#"><img class="menu" src="icons/rounded-menu.svg" alt="Menu"></a>
+                    </div>
+                    <div class="tasks displayNone">
+                        <div class="row">
+                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
+                            <div class="task-name">Rosso</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
+                            <div class="task-name">Giallo</div>
+                        </div>
+                    </div>
+                    <div class="menu-content displayNone">
+                        <a href="#" class="rename">Rinomina</a>
+                        <a href="#" class="change-color">Cambia colore</a>
+                        <a href="#" class="remove">Elimina</a>
+                    </div>
+                    <div class="color-picker show">
+                        <div class="color-box bg-white"></div>
+                        <div class="color-box bg-red"></div>
+                        <div class="color-box bg-pink"></div>
+                        <div class="color-box bg-purple"></div>
+                        <div class="color-box bg-blue"></div>
+                        <div class="color-box bg-cyan"></div>
+                        <div class="color-box bg-green"></div>
+                        <div class="color-box bg-yellow"></div>
+                        <div class="color-box bg-orange"></div>
+                        <div class="color-box bg-brown"></div>
+                        <div class="color-box bg-grey"></div>
+                        <div class="color-box bg-dark"></div>
+                    </div>
+                </div>
             </div>  
         </div>    
     </div>
-    <div class="w3-container">
-        <div id="id01" class="w3-modal">
-          <div class="w3-modal-content">
-            <div class="w3-container">
-              <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-              <h2>SCEGLI UN COLORE</h2><input type="button" id="okColor" onclick="getColor('lightgreen');document.getElementById('id01').style.display='none';" style="background-color:lightgreen" value="  ">
-                                       <input type="button" id="okColor" onclick="getColor('turquoise');document.getElementById('id01').style.display='none';" style="background-color:turquoise" value="  ">
-                
-            </div>
-          </div>
-        </div>
-      </div>
     <script src="app.js"></script>
 </body>
 </html>

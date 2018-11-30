@@ -63,6 +63,11 @@
 .checklist .color-picker .color-box {
   width: 20px;
   height: 20px;
+  float: right;
+  margin-left: 15%;
+  border: 1.5px;
+  border-style: outset;
+  border-color: gray;
 }
 
 .task-name {
@@ -99,6 +104,11 @@ button {
   display: block;
 }
 
+.bg-white {
+  background-color: #ffffff;
+  margin-right: 20%;
+}
+
 .bg-red {
   background-color: #F44336;
 }
@@ -113,6 +123,7 @@ button {
 
 .bg-blue {
   background-color: #2196F3;
+  margin-right: 20%;
 }
 
 .bg-cyan {
@@ -129,6 +140,7 @@ button {
 
 .bg-orange {
   background-color: #FF5722;
+  margin-right: 20%;
 }
 
 .bg-brown {

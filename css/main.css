@@ -64,8 +64,25 @@ body {
   display: inline-block;
   width: 73px;
   height: 50px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.checklist .color-picker .color-box:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(125%);
+          filter: brightness(125%);
+}
+
+.checklist .color-picker .color-box.bg-white:hover {
+  -webkit-filter: brightness(85%);
+          filter: brightness(85%);
+}
+
+.checklist .color-picker .color-box.bg-dark:hover {
+  -webkit-filter: brightness(185%);
+          filter: brightness(185%);
 }
 
 .task-name {

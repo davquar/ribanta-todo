@@ -79,7 +79,21 @@ body {
             display: inline-block;
             width: 73px;
             height: 50px;
+            border-radius: 5px;
             box-shadow: $box-shadow-heavy;
+            
+            &:hover {
+                cursor: pointer;
+                filter: brightness(125%);
+            }
+
+            &.bg-white:hover {
+                filter: brightness(85%);
+            }
+
+            &.bg-dark:hover {
+                filter: brightness(185%);
+            }
         }
     }
 }
@@ -124,7 +138,7 @@ button {
 
 .bg-red {
     background-color: $red;
-    color: #fff
+    color: #fff;
 }
  
 .bg-pink {

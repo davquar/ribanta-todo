@@ -53,14 +53,19 @@ function notEditable(){
 	name.blur();
 }
 
-function getColor(col){
-	document.getElementById("cl1").style.backgroundColor=col;
+function changeColor(event) {
+	const colorClass = event.target.classList[1];	// the color class should always be the second class in the style attribute
+	const checklist = event.path[2];
+	// the color class should always be the second class in the style attribute of the checklist
+	if (checklist.classList.length > 1) checklist.classList.remove(checklist.classList[1]);
+	checklist.classList.add(colorClass);
 }
 
 function handleBoardClicks(event) {
 	if (event.target.matches(".menu")) toggleChecklistMenu(event);
 	if (event.target.matches(".menu-content a.rename") || event.target.matches(".header .name")) toggleRename(event);
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
+	if (event.target.matches(".color-box")) changeColor(event);
 }
 
 function handleBoardKeys(event) {

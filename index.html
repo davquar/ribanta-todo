@@ -19,7 +19,7 @@
         <div id="content">
           <button id="btn-createList">+ Nuova checklist</button>
             <div id="board">
-                <div class="checklist" id="cl1">
+                <div class="checklist bg-white" data-status="showTasks">
                     <div class="header">
                         <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()" >Spesa</div>
                         <a href="#"><img class="menu" src="icons/rounded-menu.svg" alt="Menu"></a>
@@ -38,57 +38,12 @@
                             <div class="task-name">Pecora</div>
                         </div>
                     </div>
-                    <div class="menu-content displayNone">
-                        <a href="#" class="rename">Rinomina</a>
-                        <a href="#" onclick="document.getElementById('id01').style.display='block'" class="w3-button" >Cambia colore</a>
-                        <a href="#" class="remove">Elimina</a>
-                    </div>
-                </div>
-                <div class="checklist" id="cl2">
-                    <div class="header">
-                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Studiare</div>
-                        <a href="#"><img class="menu" src="icons/rounded-menu.svg" alt="Menu"></a>
-                    </div>
-                    <div class="tasks displayNone">
-                        <div class="row">
-                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
-                            <div class="task-name">Algebra</div>
-                        </div>
-                        <div class="row">
-                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
-                            <div class="task-name">Basi</div>
-                        </div>
-                        <div class="row">
-                            <input type="checkbox" name="task2-checkbox" id="task2-checkbox">
-                            <div class="task-name">Bottoni</div>
-                        </div>
-                    </div>
-                    <div class="menu-content show">
-                        <a href="#" class="rename">Rinomina</a>
-                        <a href="#" class="remove">Elimina</a>
-                    </div>
-                </div>
-                <div class="checklist" id="cl2">
-                    <div class="header">
-                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Colorare!</div>
-                        <a href="#"><img class="menu invert" src="icons/rounded-menu.svg" alt="Menu"></a>
-                    </div>
-                    <div class="tasks displayNone">
-                        <div class="row">
-                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
-                            <div class="task-name">Rosso</div>
-                        </div>
-                        <div class="row">
-                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
-                            <div class="task-name">Giallo</div>
-                        </div>
-                    </div>
-                    <div class="menu-content displayNone">
+                    <div class="menu-content">
                         <a href="#" class="rename">Rinomina</a>
                         <a href="#" class="change-color">Cambia colore</a>
                         <a href="#" class="remove">Elimina</a>
                     </div>
-                    <div class="color-picker show" >
+                    <div class="color-picker" >
                         <div class="color-box bg-white active"></div>
                         <div class="color-box bg-red"></div>
                         <div class="color-box bg-pink"></div>
@@ -102,6 +57,82 @@
                         <div class="color-box bg-brown"></div>
                         <div class="color-box bg-grey"></div>
                         <div class="color-box bg-dark"></div>
+                    </div>
+                </div>
+                <div class="checklist bg-red" data-status="showMenu">
+                    <div class="header">
+                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Studiare</div>
+                        <a href="#"><img class="menu" src="icons/rounded-menu.svg" alt="Menu"></a>
+                    </div>
+                    <div class="tasks">
+                        <div class="row">
+                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
+                            <div class="task-name">Algebra</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
+                            <div class="task-name">Basi</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task2-checkbox" id="task2-checkbox">
+                            <div class="task-name">Bottoni</div>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <a href="#" class="rename">Rinomina</a>
+                        <a href="#" class="change-color">Cambia colore</a>
+                        <a href="#" class="remove">Elimina</a>
+                    </div>
+                    <div class="color-picker" >
+                        <div class="color-box bg-white"></div>
+                        <div class="color-box bg-red active"></div>
+                        <div class="color-box bg-pink"></div>
+                        <div class="color-box bg-purple"></div>
+                        <div class="color-box bg-blue"></div>
+                        <div class="color-box bg-cyan"></div>
+                        </br>
+                        <div class="color-box bg-green"></div>
+                        <div class="color-box bg-yellow"></div>
+                        <div class="color-box bg-orange"></div>
+                        <div class="color-box bg-brown"></div>
+                        <div class="color-box bg-grey"></div>
+                        <div class="color-box bg-dark"></div>
+                    </div>
+                </div>
+                <div class="checklist bg-dark" data-status="showColorPicker">
+                    <div class="header">
+                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Colorare!</div>
+                        <a href="#"><img class="menu invert" src="icons/rounded-menu.svg" alt="Menu"></a>
+                    </div>
+                    <div class="tasks">
+                        <div class="row">
+                            <input type="checkbox" name="task0-checkbox" id="task0-checkbox">
+                            <div class="task-name">Rosso</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="task1-checkbox" id="task1-checkbox">
+                            <div class="task-name">Giallo</div>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <a href="#" class="rename">Rinomina</a>
+                        <a href="#" class="change-color">Cambia colore</a>
+                        <a href="#" class="remove">Elimina</a>
+                    </div>
+                    <div class="color-picker" >
+                        <div class="color-box bg-white"></div>
+                        <div class="color-box bg-red"></div>
+                        <div class="color-box bg-pink"></div>
+                        <div class="color-box bg-purple"></div>
+                        <div class="color-box bg-blue"></div>
+                        <div class="color-box bg-cyan"></div>
+                        </br>
+                        <div class="color-box bg-green"></div>
+                        <div class="color-box bg-yellow"></div>
+                        <div class="color-box bg-orange"></div>
+                        <div class="color-box bg-brown"></div>
+                        <div class="color-box bg-grey"></div>
+                        <div class="color-box bg-dark active"></div>
                     </div>
                 </div>
             </div>  

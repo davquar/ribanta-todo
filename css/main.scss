@@ -46,6 +46,24 @@ body {
     border-radius: 10px;
     box-shadow: $box-shadow-light;
 
+    &[data-status="showTasks"] {
+        .tasks { display: block; }
+        .menu-content { display: none; }
+        .color-picker { display: none; }
+    }
+
+    &[data-status="showMenu"] {
+        .tasks { display: none; }
+        .menu-content { display: block; }
+        .color-picker { display: none; }
+    }
+    
+    &[data-status="showColorPicker"] {
+        .tasks { display: none; }
+        .menu-content { display: none; }
+        .color-picker { display: block; }
+    }
+
     .header {
         display: flex;
         flex-direction: row;

@@ -62,25 +62,25 @@ function handleChecklistView(checklist, intent) {
 function toggleRename(event) {
 	// if the event is null, it means that toggleRename has been called by newChecklist
 	// in that case, just select the last checklist and set the focus on its name.
-	const name = event ? event.path[2].querySelector(".header .name") : board.querySelector(".checklist:last-of-type").querySelector(".header .name");
+	const name = event ? event.composedPath()[2].querySelector(".header .name") : board.querySelector(".checklist:last-of-type").querySelector(".header .name");
 	name.contentEditable = true;
 	name.focus();
 }
 
 function deleteChecklist(event) {
-	const checklist = event.path[2];
+	const checklist = event.composedPath()[2];
 	checklist.parentNode.removeChild(checklist);
 }
 
 function notEditable(){
-	const name = event.path[2].querySelector(".header .name");
+	const name = event.composedPath()[2].querySelector(".header .name");
 	name.contentEditable = false;
 	name.blur();
 }
 
 function changeColor(event) {
 	const colorClass = event.target.classList[1];	// the color class should always be the third class in the style attribute
-	const checklist = event.path[2];
+	const checklist = event.composedPath()[2];
 	// the color class should always be the third class in the style attribute of the checklist
 	if (checklist.classList.length > 1) checklist.classList.remove(checklist.classList[1]);
 	checklist.classList.add(colorClass);
@@ -94,10 +94,10 @@ function updateCurrentColor(checklist) {
 }
 
 function handleBoardClicks(event) {
-	if (event.target.matches(".menu")) handleChecklistView(event.path[3], MENU_CLICKED);
+	if (event.target.matches(".menu")) handleChecklistView(event.composedPath()[3], MENU_CLICKED);
 	if (event.target.matches(".menu-content a.rename") || event.target.matches(".header .name")) toggleRename(event);
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
-	if (event.target.matches(".menu-content a.change-color")) handleChecklistView(event.path[2], COLOR_PICKER_ACTION_CLICKED);
+	if (event.target.matches(".menu-content a.change-color")) handleChecklistView(event.composedPath()[2], COLOR_PICKER_ACTION_CLICKED);
 	if (event.target.matches(".color-box")) changeColor(event);
 }
 

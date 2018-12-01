@@ -20,6 +20,10 @@ $font-stack: 'Roboto', 'Arial', sans-serif;
 $box-shadow-heavy: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
+@mixin invert {
+    filter: invert(100%);
+} 
+
 body {
     font-family: $font-stack;
     color: $primary-color;
@@ -81,6 +85,22 @@ body {
             height: 50px;
             border-radius: 5px;
             box-shadow: $box-shadow-heavy;
+
+            &.active {
+                filter: brightness(60%);
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url("/icons/done.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    filter: invert(90%);
+                }
+            }
             
             &:hover {
                 cursor: pointer;
@@ -139,26 +159,36 @@ button {
 .bg-red {
     background-color: $red;
     color: #fff;
+
+    .invert { @include invert() };
 }
  
 .bg-pink {
     background-color: $pink;
     color: #fff;
+
+    .invert { @include invert() };
 }
  
 .bg-purple {
     background-color: $purple;
     color: #fff;
+
+    .invert { @include invert() };
 }
 
 .bg-blue {
     background-color: $blue;
     color: #fff;
+
+    .invert { @include invert() };
 }
 
 .bg-cyan {
     background-color: $cyan;
     color: #fff;
+
+    .invert { @include invert() };
 }
  
 .bg-green {
@@ -179,6 +209,8 @@ button {
 .bg-brown {
     background-color: $brown;
     color: #fff;
+
+    .invert { @include invert() };
 }
 
 .bg-grey {
@@ -189,5 +221,7 @@ button {
 .bg-dark {
     background-color: $dark;
     color: #fff;
+
+    .invert { @include invert() };
 }
  

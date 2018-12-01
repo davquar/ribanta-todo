@@ -59,6 +59,13 @@ function changeColor(event) {
 	// the color class should always be the second class in the style attribute of the checklist
 	if (checklist.classList.length > 1) checklist.classList.remove(checklist.classList[1]);
 	checklist.classList.add(colorClass);
+	updateCurrentColor(checklist);
+}
+
+function updateCurrentColor(checklist) {
+	const colorClass = checklist.classList[1];
+	checklist.querySelectorAll(".color-picker .color-box.active").forEach(box => box.classList.remove("active"));
+	checklist.querySelector(`.color-picker .color-box.${colorClass}`).classList.add("active");
 }
 
 function handleBoardClicks(event) {

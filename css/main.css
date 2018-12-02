@@ -34,6 +34,11 @@ a {
   width: 24px;
 }
 
+.checklist .menu:hover {
+  background-color: #e3e3e3;
+  border-radius: 5px;
+}
+
 .checklist[data-status="showTasks"] .tasks {
   display: block;
 }
@@ -110,6 +115,10 @@ a {
   padding-top: 15px;
 }
 
+.checklist .menu-content a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .checklist .menu-content a:not(:last-of-type) {
   border-bottom: 1px solid #e3e3e3;
   padding-bottom: 15px;
@@ -117,6 +126,7 @@ a {
 
 .checklist .menu-content a:last-of-type {
   padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .checklist .color-picker .color-box {

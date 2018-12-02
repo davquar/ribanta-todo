@@ -59,6 +59,11 @@ a {
         background-position: center;
         height: 24px;
         width: 24px;
+
+        &:hover {
+            background-color: $light-color;
+            border-radius: 5px;
+        }
     }
 
     &[data-status="showTasks"] {
@@ -112,6 +117,10 @@ a {
             color: $primary-color-lighter;
             padding-top: 15px;
 
+            &:hover {
+                background-color: rgba(255,255,255,0.1);
+            }
+
             &:not(:last-of-type) {
                 border-bottom: 1px solid $light-color;
                 padding-bottom: 15px;
@@ -119,6 +128,7 @@ a {
 
             &:last-of-type {
                 padding-top: 15px;
+                padding-bottom: 15px;
             }
         }
     }

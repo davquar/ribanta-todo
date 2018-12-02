@@ -22,11 +22,19 @@ $box-shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 @mixin invert {
     filter: invert(100%);
-} 
+}
+
+@mixin lightMenuContent {
+    .menu-content a { color: $light-color; }
+}
 
 body {
     font-family: $font-stack;
     color: $primary-color;
+}
+
+a {
+    cursor: pointer;
 }
 
 .container {
@@ -150,6 +158,7 @@ body {
 button {
     margin: 15px 0;
 }
+
 #btn-createList {
     border: 1px solid $primary-color-lighter;
     background: none;
@@ -179,6 +188,7 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
  
 .bg-pink {
@@ -186,6 +196,7 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
  
 .bg-purple {
@@ -193,6 +204,7 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
 
 .bg-blue {
@@ -200,6 +212,7 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
 
 .bg-cyan {
@@ -207,6 +220,7 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
  
 .bg-green {
@@ -221,7 +235,10 @@ button {
  
 .bg-orange {
     background-color: $orange;
-    color: $dark;
+    color: #fff;
+    
+    .invert { @include invert() };
+    @include lightMenuContent();
 }
 
 .bg-brown {
@@ -229,6 +246,7 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
 
 .bg-grey {
@@ -241,5 +259,6 @@ button {
     color: #fff;
 
     .invert { @include invert() };
+    @include lightMenuContent();
 }
  

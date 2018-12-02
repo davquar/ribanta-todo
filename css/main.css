@@ -3,6 +3,10 @@ body {
   color: #222;
 }
 
+a {
+  cursor: pointer;
+}
+
 .container {
   margin: 0 auto;
   width: 500px;
@@ -188,6 +192,10 @@ button {
           filter: invert(100%);
 }
 
+.bg-red .menu-content a {
+  color: #e3e3e3;
+}
+
 .bg-pink {
   background-color: #E91E63;
   color: #fff;
@@ -196,6 +204,10 @@ button {
 .bg-pink .invert {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.bg-pink .menu-content a {
+  color: #e3e3e3;
 }
 
 .bg-purple {
@@ -208,6 +220,10 @@ button {
           filter: invert(100%);
 }
 
+.bg-purple .menu-content a {
+  color: #e3e3e3;
+}
+
 .bg-blue {
   background-color: #2196F3;
   color: #fff;
@@ -218,6 +234,10 @@ button {
           filter: invert(100%);
 }
 
+.bg-blue .menu-content a {
+  color: #e3e3e3;
+}
+
 .bg-cyan {
   background-color: #00BCD4;
   color: #fff;
@@ -226,6 +246,10 @@ button {
 .bg-cyan .invert {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.bg-cyan .menu-content a {
+  color: #e3e3e3;
 }
 
 .bg-green {
@@ -240,7 +264,16 @@ button {
 
 .bg-orange {
   background-color: #FF5722;
-  color: #212121;
+  color: #fff;
+}
+
+.bg-orange .invert {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.bg-orange .menu-content a {
+  color: #e3e3e3;
 }
 
 .bg-brown {
@@ -251,6 +284,10 @@ button {
 .bg-brown .invert {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.bg-brown .menu-content a {
+  color: #e3e3e3;
 }
 
 .bg-grey {
@@ -266,5 +303,9 @@ button {
 .bg-dark .invert {
   -webkit-filter: invert(100%);
           filter: invert(100%);
+}
+
+.bg-dark .menu-content a {
+  color: #e3e3e3;
 }
 /*# sourceMappingURL=main.css.map */

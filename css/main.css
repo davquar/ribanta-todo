@@ -1,3 +1,8 @@
+* {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
 body {
   font-family: "Roboto", "Arial", sans-serif;
   color: #222;

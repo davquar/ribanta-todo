@@ -54,22 +54,41 @@ a {
     border-radius: 10px;
     box-shadow: $box-shadow-light;
 
+    .menu {
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 24px;
+        width: 24px;
+    }
+
     &[data-status="showTasks"] {
         .tasks { display: block; }
         .menu-content { display: none; }
         .color-picker { display: none; }
+
+        .menu {
+            background-image: url("/icons/rounded-menu.svg");
+        }
     }
 
     &[data-status="showMenu"] {
         .tasks { display: none; }
         .menu-content { display: block; }
         .color-picker { display: none; }
+
+        .menu {
+            background-image: url("/icons/close.svg");
+        }
     }
     
     &[data-status="showColorPicker"] {
         .tasks { display: none; }
         .menu-content { display: none; }
         .color-picker { display: block; }
+
+        .menu {
+            background-image: url("/icons/arrow-back.svg");
+        }
     }
 
     .header {
@@ -236,7 +255,7 @@ button {
 .bg-orange {
     background-color: $orange;
     color: #fff;
-    
+
     .invert { @include invert() };
     @include lightMenuContent();
 }

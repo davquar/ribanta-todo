@@ -132,7 +132,8 @@ input[type="text"] {
         .tasks { display: none; }
         .menu-content { display: block; }
         .color-picker { display: none; }
-
+        .task-adder { display: none; }
+        
         .menu {
             background-image: url("/icons/close.svg");
         }
@@ -142,6 +143,7 @@ input[type="text"] {
         .tasks { display: none; }
         .menu-content { display: none; }
         .color-picker { display: block; }
+        .task-adder { display: none; }
 
         .menu {
             background-image: url("/icons/arrow-back.svg");
@@ -163,12 +165,9 @@ input[type="text"] {
             padding: 5px 0;
 
             input[type="checkbox"] {
-                visibility: hidden;
+                display: none;
                 outline: 0;
-                width: 18px;
-                width: 18px;
                 margin: 0;
-                display: block;
                 float: left;
                 
                 &:checked {
@@ -182,6 +181,10 @@ input[type="text"] {
                 }
             }
 
+            .task-name {
+                cursor: pointer;
+            }
+
             .task-name:before {
                 content: "";
                 height: 18px;
@@ -192,7 +195,6 @@ input[type="text"] {
                 background: #fff;
                 border: 1px solid $light-color;
                 border-radius: 3px;
-
             }
 
             &:hover {

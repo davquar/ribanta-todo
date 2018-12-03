@@ -5,6 +5,8 @@ const COLOR_PICKER_ACTION_CLICKED = 2;
 const newChecklistButton = document.querySelector("#btn-createList");
 const board = document.querySelector("#board");
 
+let taskCounter = 2;
+
 function newChecklist() {
 	board.innerHTML += `<div class="checklist bg-white" data-status="showTasks">
 	<div class="header">
@@ -95,8 +97,8 @@ function updateCurrentColor(checklist) {
 
 function addTask(checklist, value) {
 	const tasks = checklist.querySelector(".tasks");
-	tasks.innerHTML += `<div class="row"><input type="checkbox">
-	<div class="task-name">${value}</div></div>`;
+	tasks.innerHTML += `<div class="row"><input type="checkbox" id="task${++taskCounter}">
+	<label for="task${taskCounter}" class="task-name">${value}</label></div>`;
 }
 
 function handleBoardClicks(event) {
@@ -115,6 +117,7 @@ function handleBoardKeys(event) {
 
 	if (event.target.matches(".task-adder input") && event.which == 13) {
 		addTask(event.composedPath()[2], event.target.value);
+		event.target.value = "";
 	}
 }
 newChecklistButton.addEventListener("click", newChecklist);

@@ -122,6 +122,10 @@ input[type="text"] {
   display: none;
 }
 
+.checklist[data-status="showMenu"] .task-adder {
+  display: none;
+}
+
 .checklist[data-status="showMenu"] .menu {
   background-image: url("/icons/close.svg");
 }
@@ -136,6 +140,10 @@ input[type="text"] {
 
 .checklist[data-status="showColorPicker"] .color-picker {
   display: block;
+}
+
+.checklist[data-status="showColorPicker"] .task-adder {
+  display: none;
 }
 
 .checklist[data-status="showColorPicker"] .menu {
@@ -164,12 +172,9 @@ input[type="text"] {
 }
 
 .checklist .tasks .row input[type="checkbox"] {
-  visibility: hidden;
+  display: none;
   outline: 0;
-  width: 18px;
-  width: 18px;
   margin: 0;
-  display: block;
   float: left;
 }
 
@@ -179,6 +184,10 @@ input[type="text"] {
 
 .checklist .tasks .row input[type="checkbox"]:checked + label:before {
   background: rgba(0, 0, 0, 0.5);
+}
+
+.checklist .tasks .row .task-name {
+  cursor: pointer;
 }
 
 .checklist .tasks .row .task-name:before {

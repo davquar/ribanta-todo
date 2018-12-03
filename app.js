@@ -99,6 +99,17 @@ function addTask(checklist, value) {
 	const tasks = checklist.querySelector(".tasks");
 	tasks.innerHTML += `<div class="row"><input type="checkbox" id="task${++taskCounter}">
 	<label for="task${taskCounter}" class="task-name">${value}</label></div>`;
+	refreshChecks(tasks);
+}
+
+function mapTaskCheck(event) {
+	const task = event.target;
+	task.dataset.checked = task.checked;
+}
+
+function refreshChecks(tasks) {
+	tasks.querySelectorAll(".row input").forEach(check => check.checked = eval(check.dataset.checked));
+	// why eval? because datasets always contain strings, so "false" is a truthy value, so we need to properly evaluate it.
 }
 
 function handleBoardClicks(event) {
@@ -107,6 +118,7 @@ function handleBoardClicks(event) {
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
 	if (event.target.matches(".menu-content a.change-color")) handleChecklistView(event.composedPath()[2], COLOR_PICKER_ACTION_CLICKED);
 	if (event.target.matches(".color-box")) changeColor(event);
+	if (event.target.matches(".tasks .row input")) mapTaskCheck(event);
 }
 
 function handleBoardKeys(event) {

@@ -125,10 +125,6 @@ function handleBoardClicks(event) {
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
 	if (event.target.matches(".menu-content a.change-color")) handleChecklistView(event.composedPath()[2], COLOR_PICKER_ACTION_CLICKED);
 	if (event.target.matches(".color-box")) changeColor(event);
-	if (event.target.matches(".tasks .row label")) {
-		toggleRenameTask(event);
-		event.preventDefault(); // avoids checking
-	}
 	if (event.target.matches(".tasks .row input")) mapTaskCheck(event);
 }
 

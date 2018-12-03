@@ -21,7 +21,7 @@
             <div id="board">
                 <div class="checklist bg-white" data-status="showTasks">
                     <div class="header">
-                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()" >Spesa</div>
+                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Spesa</div>
                         <a><div class="menu invert"></div></a>
                     </div>
                     <div class="tasks">
@@ -37,6 +37,9 @@
                             <input type="checkbox" name="task2-checkbox" id="task2-checkbox">
                             <div class="task-name">Pecora</div>
                         </div>
+                    </div>
+                    <div class="task-adder">
+                        <input type="text" name="new-task-name">
                     </div>
                     <div class="menu-content">
                         <a class="rename">Rinomina</a>

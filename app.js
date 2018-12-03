@@ -93,6 +93,12 @@ function updateCurrentColor(checklist) {
 	checklist.querySelector(`.color-picker .color-box.${colorClass}`).classList.add("active");
 }
 
+function addTask(checklist, value) {
+	const tasks = checklist.querySelector(".tasks");
+	tasks.innerHTML += `<div class="row"><input type="checkbox">
+	<div class="task-name">${value}</div></div>`;
+}
+
 function handleBoardClicks(event) {
 	if (event.target.matches(".menu")) handleChecklistView(event.composedPath()[3], MENU_CLICKED);
 	if (event.target.matches(".menu-content a.rename") || event.target.matches(".header .name")) toggleRename(event);
@@ -105,6 +111,10 @@ function handleBoardKeys(event) {
 	// finish editing on Enter key
 	if (event.target.matches(".header .name") && event.which == 13) {
 		event.target.contentEditable = false;
+	}
+
+	if (event.target.matches(".task-adder input") && event.which == 13) {
+		addTask(event.composedPath()[2], event.target.value);
 	}
 }
 newChecklistButton.addEventListener("click", newChecklist);

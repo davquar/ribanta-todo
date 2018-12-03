@@ -53,6 +53,14 @@ button#btn-createList:hover {
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+input[type="text"] {
+  border: none;
+  outline: none;
+  background-color: #e3e3e3;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .container {
   margin: 0 auto;
   width: 500px;
@@ -149,6 +157,10 @@ button#btn-createList:hover {
 
 .checklist .header div {
   display: inline-block;
+}
+
+.checklist .tasks .row {
+  padding: 5px 0;
 }
 
 .checklist .menu-content a {

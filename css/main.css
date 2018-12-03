@@ -163,6 +163,40 @@ input[type="text"] {
   padding: 5px 0;
 }
 
+.checklist .tasks .row input[type="checkbox"] {
+  visibility: hidden;
+  outline: 0;
+  width: 18px;
+  width: 18px;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+.checklist .tasks .row input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+
+.checklist .tasks .row input[type="checkbox"]:checked + label:before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.checklist .tasks .row .task-name:before {
+  content: "";
+  height: 18px;
+  width: 18px;
+  display: block;
+  margin-right: 5px;
+  float: left;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+}
+
+.checklist .tasks .row:hover .task-name:before {
+  background: #e3e3e3;
+}
+
 .checklist .menu-content a {
   display: block;
   text-align: center;

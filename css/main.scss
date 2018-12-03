@@ -161,6 +161,45 @@ input[type="text"] {
     .tasks {
         .row {
             padding: 5px 0;
+
+            input[type="checkbox"] {
+                visibility: hidden;
+                outline: 0;
+                width: 18px;
+                width: 18px;
+                margin: 0;
+                display: block;
+                float: left;
+                
+                &:checked {
+                    + label {
+                        text-decoration: line-through;
+
+                        &:before {
+                            background: rgba(0,0,0,0.5);
+                        }
+                    }
+                }
+            }
+
+            .task-name:before {
+                content: "";
+                height: 18px;
+                width: 18px;
+                display: block;
+                margin-right: 5px;
+                float: left;
+                background: #fff;
+                border: 1px solid $light-color;
+                border-radius: 3px;
+
+            }
+
+            &:hover {
+                .task-name:before {
+                    background: $light-color;
+                }
+            }
         }
     }
 

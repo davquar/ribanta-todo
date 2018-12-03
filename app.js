@@ -69,6 +69,13 @@ function toggleRename(event) {
 	name.focus();
 }
 
+function toggleRenameTask(event) {
+	const name = event.target;
+	name.contentEditable = true;
+	name.focus();
+	document.execCommand("selectAll", false, null);
+}
+
 function deleteChecklist(event) {
 	const checklist = event.composedPath()[2];
 	checklist.parentNode.removeChild(checklist);
@@ -118,12 +125,20 @@ function handleBoardClicks(event) {
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
 	if (event.target.matches(".menu-content a.change-color")) handleChecklistView(event.composedPath()[2], COLOR_PICKER_ACTION_CLICKED);
 	if (event.target.matches(".color-box")) changeColor(event);
+	if (event.target.matches(".tasks .row label")) {
+		toggleRenameTask(event);
+		event.preventDefault(); // avoids checking
+	}
 	if (event.target.matches(".tasks .row input")) mapTaskCheck(event);
 }
 
 function handleBoardKeys(event) {
 	// finish editing on Enter key
 	if (event.target.matches(".header .name") && event.which == 13) {
+		event.target.contentEditable = false;
+	}
+
+	if (event.target.matches(".tasks .row label") && event.which == 13) {
 		event.target.contentEditable = false;
 	}
 

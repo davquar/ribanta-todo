@@ -37,8 +37,47 @@ body {
     color: $primary-color;
 }
 
-a {
+a,
+button {
     cursor: pointer;
+}
+
+button {
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    .add-icon {
+        display: inline-block;
+        margin: 0 10px 0 5px;
+        padding: 5px 10px;
+        border: 1px solid white;
+        border-radius: 100px;
+    }
+
+    .button-label {
+        display: inline-block;
+    }
+
+    &.ghost {
+        border: 1px solid $light-color;
+        background: none;
+    }
+
+    &.solid {
+        border: none;
+        background-color: $primary-color;
+        color: #fff;
+        box-shadow: $box-shadow-light;
+    }
+
+    &#btn-createList:hover {
+        background-color: rgba($color: $primary-color, $alpha: 0.9);
+        color: #fff;
+        box-shadow: $box-shadow-heavy;
+    }
 }
 
 .container {
@@ -49,6 +88,7 @@ a {
 #board {
     display: grid;
     gap: 15px;
+    margin: 30px 0;
 }
 
 /** CHECKLISTS **/
@@ -185,21 +225,6 @@ a {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0 0 5px 0;
-}
-
-/** CONTROLS **/
-button {
-    margin: 15px 0;
-}
-
-#btn-createList {
-    border: 1px solid $primary-color-lighter;
-    background: none;
-    outline: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
 /** UTILITIES **/

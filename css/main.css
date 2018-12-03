@@ -8,8 +8,49 @@ body {
   color: #222;
 }
 
-a {
+a,
+button {
   cursor: pointer;
+}
+
+button {
+  padding: 15px;
+  border-radius: 5px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+button .add-icon {
+  display: inline-block;
+  margin: 0 10px 0 5px;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+
+button .button-label {
+  display: inline-block;
+}
+
+button.ghost {
+  border: 1px solid #e3e3e3;
+  background: none;
+}
+
+button.solid {
+  border: none;
+  background-color: #222;
+  color: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+button#btn-createList:hover {
+  background-color: rgba(34, 34, 34, 0.9);
+  color: #fff;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .container {
@@ -21,6 +62,7 @@ a {
   display: -ms-grid;
   display: grid;
   gap: 15px;
+  margin: 30px 0;
 }
 
 /** CHECKLISTS **/
@@ -185,21 +227,6 @@ a {
   text-transform: uppercase;
   font-weight: bold;
   margin: 0 0 5px 0;
-}
-
-/** CONTROLS **/
-button {
-  margin: 15px 0;
-}
-
-#btn-createList {
-  border: 1px solid #333;
-  background: none;
-  outline: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 /** UTILITIES **/

@@ -175,7 +175,11 @@ input[type="text"] {
                         text-decoration: line-through;
 
                         &:before {
-                            background: rgba(0,0,0,0.5);
+                            background-image: url("/icons/done.svg");
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 100%;
+                            transition: inherit;
                         }
                     }
                 }

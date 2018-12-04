@@ -10,16 +10,19 @@ let taskCounter = 2;
 function newChecklist() {
 	board.innerHTML += `<div class="checklist bg-white" data-status="showTasks">
 	<div class="header">
-		<div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()" >Spesa</div>
-		<a href="#"><img class="menu" src="icons/rounded-menu.svg" alt="Menu"></a>
+		<div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Nuova checklist</div>
+		<a><div class="menu invert"></div></a>
 	</div>
 	<div class="tasks"></div>
-	<div class="menu-content">
-		<a href="#" class="rename">Rinomina</a>
-		<a href="#" class="change-color">Cambia colore</a>
-		<a href="#" class="remove">Elimina</a>
+	<div class="task-adder">
+		<input type="text" name="new-task-name" placeholder="Nuovo elemento">
 	</div>
-	<div class="color-picker" >
+	<div class="menu-content">
+		<a class="rename">Rinomina</a>
+		<a class="change-color">Cambia colore</a>
+		<a class="remove">Elimina</a>
+	</div>
+	<div class="color-picker">
 		<div class="color-box bg-white active"></div>
 		<div class="color-box bg-red"></div>
 		<div class="color-box bg-pink"></div>

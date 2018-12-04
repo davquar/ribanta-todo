@@ -96,7 +96,17 @@ input[type="text"] {
 
 .container {
     margin: 0 auto;
-    width: 500px;
+    min-width: 320px;
+    max-width: 500px;
+    padding: 0 10px;
+}
+
+header {
+    text-align: center;
+}
+
+#content {
+    display: grid;
 }
 
 #board {
@@ -111,7 +121,8 @@ input[type="text"] {
     padding: 15px;
     border-radius: 10px;
     box-shadow: $box-shadow-light;
-    width: 460px;
+    min-width: 250px;
+    max-width: 500px;
 
     .menu {
         background-repeat: no-repeat;

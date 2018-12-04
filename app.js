@@ -29,7 +29,6 @@ function newChecklist() {
 		<div class="color-box bg-purple"></div>
 		<div class="color-box bg-blue"></div>
 		<div class="color-box bg-cyan"></div>
-		</br>
 		<div class="color-box bg-green"></div>
 		<div class="color-box bg-yellow"></div>
 		<div class="color-box bg-orange"></div>

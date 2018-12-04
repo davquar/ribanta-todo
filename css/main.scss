@@ -270,10 +270,25 @@ header {
     .color-picker {
         .color-box {
             display: inline-block;
-            width: 73px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 5px;
             box-shadow: $box-shadow-heavy;
+            
+            @media screen and (min-width: 321px) and (max-width: 375px) {
+                width: 50px;
+                height: 50px;
+            }
+            
+            @media screen and (min-width: 376px) and (max-width: 425px) {
+                width: 59px;
+                height: 50px;
+            }
+            
+            @media screen and (min-width: 426px) {
+                width: 73px;
+                height: 50px;
+            }
 
             &.active {
                 filter: brightness(60%);

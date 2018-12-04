@@ -1,6 +1,7 @@
 $primary-color: #222;
 $primary-color-lighter: #333;
 $light-color: #e3e3e3;
+$ultra-light-color: #fafafa;
 
 $red: #F44336;
 $pink: #E91E63;
@@ -37,6 +38,7 @@ $row-item-size: 18px;
 body {
     font-family: $font-stack;
     color: $primary-color;
+    background-color: $ultra-light-color;
 }
 
 a,
@@ -159,6 +161,7 @@ input[type="text"] {
 
         div {
             display: inline-block;
+            outline: none;
         }
     }
 

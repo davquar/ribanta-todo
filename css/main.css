@@ -6,6 +6,7 @@
 body {
   font-family: "Roboto", "Arial", sans-serif;
   color: #222;
+  background-color: #fafafa;
 }
 
 a,
@@ -165,6 +166,7 @@ input[type="text"] {
 
 .checklist .header div {
   display: inline-block;
+  outline: none;
 }
 
 .checklist .tasks .row {

@@ -168,6 +168,12 @@ input[type="text"] {
 }
 
 .checklist .tasks .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 5px 0;
 }
 
@@ -210,6 +216,15 @@ input[type="text"] {
 
 .checklist .tasks .row:hover .task-name:before {
   background: #e3e3e3;
+}
+
+.checklist .tasks .row .delete-task {
+  background-image: url("/icons/delete.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 }
 
 .checklist .menu-content a {
@@ -379,6 +394,15 @@ input[type="text"] {
   color: #212121;
 }
 
+.bg-green .invert {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.bg-green .menu-content a {
+  color: #e3e3e3;
+}
+
 .bg-yellow {
   background-color: #FFEB3B;
   color: #212121;
@@ -398,23 +422,32 @@ input[type="text"] {
   color: #e3e3e3;
 }
 
-.bg-brown {
-  background-color: #795548;
+.bg-bley {
+  background-color: #607D8B;
   color: #fff;
 }
 
-.bg-brown .invert {
+.bg-bley .invert {
   -webkit-filter: invert(100%);
           filter: invert(100%);
 }
 
-.bg-brown .menu-content a {
+.bg-bley .menu-content a {
   color: #e3e3e3;
 }
 
 .bg-grey {
   background-color: #9E9E9E;
   color: #212121;
+}
+
+.bg-grey .invert {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.bg-grey .menu-content a {
+  color: #e3e3e3;
 }
 
 .bg-dark {

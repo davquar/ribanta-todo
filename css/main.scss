@@ -10,7 +10,7 @@ $cyan: #00BCD4;
 $green: #8BC34A;
 $yellow: #FFEB3B;
 $orange: #FF5722;
-$brown: #795548;
+$bley: #607D8B;
 $grey: #9E9E9E;
 $dark: #212121;
 $white: #ffffff;
@@ -19,6 +19,8 @@ $font-stack: 'Roboto', 'Arial', sans-serif;
 
 $box-shadow-heavy: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $box-shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+$row-item-size: 18px;
 
 @mixin invert {
     filter: invert(100%);
@@ -162,6 +164,8 @@ input[type="text"] {
 
     .tasks {
         .row {
+            display: flex;
+            justify-content: space-between;
             padding: 5px 0;
 
             input[type="checkbox"] {
@@ -192,8 +196,8 @@ input[type="text"] {
 
             .task-name:before {
                 content: "";
-                height: 18px;
-                width: 18px;
+                height: $row-item-size;
+                width: $row-item-size;
                 display: block;
                 margin-right: 5px;
                 float: left;
@@ -206,6 +210,15 @@ input[type="text"] {
                 .task-name:before {
                     background: $light-color;
                 }
+            }
+
+            .delete-task {
+                background-image: url("/icons/delete.svg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                width: $row-item-size;
+                height: $row-item-size;
+                cursor: pointer;
             }
         }
     }
@@ -344,6 +357,9 @@ input[type="text"] {
 .bg-green {
     background-color: $green;
     color: $dark;
+
+    .invert { @include invert() };
+    @include lightMenuContent();
 }
 
 .bg-yellow {
@@ -359,8 +375,8 @@ input[type="text"] {
     @include lightMenuContent();
 }
 
-.bg-brown {
-    background-color: $brown;
+.bg-bley {
+    background-color: $bley;
     color: #fff;
 
     .invert { @include invert() };
@@ -370,6 +386,9 @@ input[type="text"] {
 .bg-grey {
     background-color: $grey;
     color: $dark;
+
+    .invert { @include invert() };
+    @include lightMenuContent();
 }
 
 .bg-dark {

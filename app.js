@@ -33,7 +33,7 @@ function newChecklist() {
 		<div class="color-box bg-green"></div>
 		<div class="color-box bg-yellow"></div>
 		<div class="color-box bg-orange"></div>
-		<div class="color-box bg-brown"></div>
+		<div class="color-box bg-bley"></div>
 		<div class="color-box bg-grey"></div>
 		<div class="color-box bg-dark"></div>
 	</div>
@@ -108,7 +108,7 @@ function updateCurrentColor(checklist) {
 function addTask(checklist, value) {
 	const tasks = checklist.querySelector(".tasks");
 	tasks.innerHTML += `<div class="row"><input type="checkbox" id="task${++taskCounter}">
-	<label for="task${taskCounter}" class="task-name">${value}</label></div>`;
+	<label for="task${taskCounter}" class="task-name">${value}</label><div class="delete-task invert"></div></div>`;
 	refreshChecks(tasks);
 }
 
@@ -122,12 +122,18 @@ function refreshChecks(tasks) {
 	// why eval? because datasets always contain strings, so "false" is a truthy value, so we need to properly evaluate it.
 }
 
+function deleteTask(event) {
+	const row = event.composedPath()[1];
+	row.parentNode.removeChild(row);
+}
+
 function handleBoardClicks(event) {
 	if (event.target.matches(".menu")) handleChecklistView(event.composedPath()[3], MENU_CLICKED);
 	if (event.target.matches(".menu-content a.rename") || event.target.matches(".header .name")) toggleRename(event);
 	if (event.target.matches(".menu-content a.remove")) deleteChecklist(event);
 	if (event.target.matches(".menu-content a.change-color")) handleChecklistView(event.composedPath()[2], COLOR_PICKER_ACTION_CLICKED);
 	if (event.target.matches(".color-box")) changeColor(event);
+	if (event.target.matches(".tasks .row .delete-task")) deleteTask(event);
 	if (event.target.matches(".tasks .row input")) mapTaskCheck(event);
 }
 

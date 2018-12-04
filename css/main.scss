@@ -85,11 +85,13 @@ button {
 }
 
 input[type="text"] {
-    border: none;
-    outline: none;
-    background-color: $light-color;
-    border-radius: 10px;
+    width: 90%;
+    margin-top: 5px;
     padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: $light-color;
 }
 
 .container {
@@ -109,6 +111,7 @@ input[type="text"] {
     padding: 15px;
     border-radius: 10px;
     box-shadow: $box-shadow-light;
+    width: 460px;
 
     .menu {
         background-repeat: no-repeat;
@@ -298,9 +301,12 @@ input[type="text"] {
 }
 
 .smallTitle {
+    margin: 0 15px 5px 0;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 0 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-bottom: 1px solid;
 }
 
 /** UTILITIES **/

@@ -126,6 +126,17 @@ function deleteTask(event) {
 	row.parentNode.removeChild(row);
 }
 
+function saveToStorage() {
+	localStorage.setItem("counter", taskCounter);
+	localStorage.setItem("checklists", board.innerHTML);
+}
+
+function getFromStorage() {
+	taskCounter = parseInt(localStorage.getItem("counter"));
+	board.innerHTML = localStorage.getItem("checklists");
+	board.querySelectorAll(".tasks").forEach(tasks => refreshChecks(tasks));
+}
+
 function handleBoardClicks(event) {
 	if (event.target.matches(".menu")) handleChecklistView(event.composedPath()[3], MENU_CLICKED);
 	if (event.target.matches(".menu-content a.rename") || event.target.matches(".header .name")) toggleRename(event);
@@ -134,6 +145,7 @@ function handleBoardClicks(event) {
 	if (event.target.matches(".color-box")) changeColor(event);
 	if (event.target.matches(".tasks .row .delete-task")) deleteTask(event);
 	if (event.target.matches(".tasks .row input")) mapTaskCheck(event);
+	saveToStorage();
 }
 
 function handleBoardKeys(event) {
@@ -150,6 +162,8 @@ function handleBoardKeys(event) {
 		addTask(event.composedPath()[2], event.target.value);
 		event.target.value = "";
 	}
+
+	saveToStorage();
 }
 newChecklistButton.addEventListener("click", newChecklist);
 board.addEventListener("click", handleBoardClicks);

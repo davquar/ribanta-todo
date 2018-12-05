@@ -39,6 +39,7 @@ function newChecklist() {
 </div>`;
 	// call it with null event, to set the focus on the name of the newly added checklist
 	toggleRename(null);
+	refreshChecks();
 }
 
 function handleChecklistView(checklist, intent) {
@@ -108,7 +109,7 @@ function addTask(checklist, value) {
 	const tasks = checklist.querySelector(".tasks");
 	tasks.innerHTML += `<div class="row"><input type="checkbox" id="task${++taskCounter}">
 	<label for="task${taskCounter}" class="task-name">${value}</label><div class="delete-task invert"></div></div>`;
-	refreshChecks(tasks);
+	refreshChecks();
 }
 
 function mapTaskCheck(event) {
@@ -116,8 +117,8 @@ function mapTaskCheck(event) {
 	task.dataset.checked = task.checked;
 }
 
-function refreshChecks(tasks) {
-	tasks.querySelectorAll(".row input").forEach(check => check.checked = eval(check.dataset.checked));
+function refreshChecks() {
+	board.querySelectorAll(".tasks .row input").forEach(check => check.checked = eval(check.dataset.checked));
 	// why eval? because datasets always contain strings, so "false" is a truthy value, so we need to properly evaluate it.
 }
 
@@ -132,7 +133,7 @@ function saveToStorage() {
 }
 
 function getFromStorage() {
-	taskCounter = parseInt(localStorage.getItem("counter"));
+	taskCounter = localStorage.getItem("counter");
 	board.innerHTML = localStorage.getItem("checklists");
 	board.querySelectorAll(".tasks").forEach(tasks => refreshChecks(tasks));
 }

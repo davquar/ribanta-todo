@@ -166,6 +166,14 @@ function handleBoardKeys(event) {
 
 	saveToStorage();
 }
+
+function createJsonString(checklist){
+	var cl = document.getElementsByClassName("checklist");
+	var a= $("cl.header.name").contents();
+	alert(a);
+	//var string= new classChecklist(x.);
+}
+
 newChecklistButton.addEventListener("click", newChecklist);
 board.addEventListener("click", handleBoardClicks);
 board.addEventListener("keydown", handleBoardKeys);

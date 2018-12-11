@@ -5,40 +5,108 @@ const COLOR_PICKER_ACTION_CLICKED = 2;
 const newChecklistButton = document.querySelector("#btn-createList");
 const board = document.querySelector("#board");
 
+class Checklist {
+	constructor(title, color, tasks) {
+		this.title = title;
+		this.color = color;
+		this.tasks = tasks;
+	}
+
+	static fromHTML(checklist) {
+		const title = checklist.querySelector(".name").innerHTML;
+		const color = checklist.classList[1];
+		const rows = Array.from(checklist.querySelectorAll(".tasks .row"));
+		const tasks = rows.map(row => Task.fromHTML(row));
+		return new Checklist(title, color, tasks);
+	}
+
+	static fromObj(obj) {
+		const title = obj.title;
+		const color = obj.color;
+		const tasks = obj.tasks.map(task => Task.fromObj(task));
+		return new Checklist(title, color, tasks);
+	}
+
+	toHTML() {
+		return `<div class="checklist ${this.color}" data-status="showTasks">
+		<div class="header">
+			<div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">${this.title}</div>
+			<a><div class="menu invert"></div></a>
+		</div>
+		<div class="tasks">
+			${this.tasks.map(task => task.toHTML()).join("")}
+		</div>
+		<div class="task-adder">
+			<input type="text" name="new-task-name" placeholder="Nuovo elemento">
+		</div>
+		<div class="menu-content">
+			<a class="rename">Rinomina</a>
+			<a class="change-color">Cambia colore</a>
+			<a class="remove">Elimina</a>
+		</div>
+		<div class="color-picker">
+			<div class="color-box bg-white active"></div>
+			<div class="color-box bg-red"></div>
+			<div class="color-box bg-pink"></div>
+			<div class="color-box bg-purple"></div>
+			<div class="color-box bg-blue"></div>
+			<div class="color-box bg-cyan"></div>
+			<div class="color-box bg-green"></div>
+			<div class="color-box bg-yellow"></div>
+			<div class="color-box bg-orange"></div>
+			<div class="color-box bg-bley"></div>
+			<div class="color-box bg-grey"></div>
+			<div class="color-box bg-dark"></div>
+		</div>
+	</div>`;
+	}
+	
+	toString() {
+		return JSON.stringify(this);
+	}
+}
+
+class Task {
+	constructor(name, id, checked) {
+		this.name = name;
+		this.id = id;
+		this.checked = checked;
+	}
+
+	static fromHTML(row) {
+		const name = row.querySelector(".task-name").innerHTML;
+		const id = row.querySelector(".task-name").getAttribute("for");
+		const checked = row.querySelector("input[type='checkbox']").checked;
+		return new Task(name, id, checked);
+	}
+
+	static fromObj(obj) {
+		const name = obj.name;
+		const id = obj.id;
+		const checked = obj.checked;
+		return new Task(name, id, checked);
+	}
+
+	toHTML() {
+		return `<div class="row">
+		<input type="checkbox" id="${this.id}" data-checked="${this.checked}">
+		<label for="${this.id}" class="task-name">${this.name}</label>
+		<div class="delete-task invert"></div>
+	</div>`;
+	}
+
+	toString() {
+		return JSON.stringify(this);
+	}
+}
+
 let taskCounter = 2;
 
 function newChecklist() {
-	board.innerHTML += `<div class="checklist bg-white" data-status="showTasks">
-	<div class="header">
-		<div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Nuova checklist</div>
-		<a><div class="menu invert"></div></a>
-	</div>
-	<div class="tasks"></div>
-	<div class="task-adder">
-		<input type="text" name="new-task-name" placeholder="Nuovo elemento">
-	</div>
-	<div class="menu-content">
-		<a class="rename">Rinomina</a>
-		<a class="change-color">Cambia colore</a>
-		<a class="remove">Elimina</a>
-	</div>
-	<div class="color-picker">
-		<div class="color-box bg-white active"></div>
-		<div class="color-box bg-red"></div>
-		<div class="color-box bg-pink"></div>
-		<div class="color-box bg-purple"></div>
-		<div class="color-box bg-blue"></div>
-		<div class="color-box bg-cyan"></div>
-		<div class="color-box bg-green"></div>
-		<div class="color-box bg-yellow"></div>
-		<div class="color-box bg-orange"></div>
-		<div class="color-box bg-bley"></div>
-		<div class="color-box bg-grey"></div>
-		<div class="color-box bg-dark"></div>
-	</div>
-</div>`;
+	board.innerHTML += new Checklist("Nuova checklist", "bg-white", []).toHTML();
 	// call it with null event, to set the focus on the name of the newly added checklist
 	toggleRename(null);
+	refreshChecks();
 }
 
 function handleChecklistView(checklist, intent) {
@@ -106,9 +174,8 @@ function updateCurrentColor(checklist) {
 
 function addTask(checklist, value) {
 	const tasks = checklist.querySelector(".tasks");
-	tasks.innerHTML += `<div class="row"><input type="checkbox" id="task${++taskCounter}">
-	<label for="task${taskCounter}" class="task-name">${value}</label><div class="delete-task invert"></div></div>`;
-	refreshChecks(tasks);
+	tasks.innerHTML += new Task(value, `task${++taskCounter}`, false).toHTML();
+	refreshChecks();
 }
 
 function mapTaskCheck(event) {
@@ -116,14 +183,29 @@ function mapTaskCheck(event) {
 	task.dataset.checked = task.checked;
 }
 
-function refreshChecks(tasks) {
-	tasks.querySelectorAll(".row input").forEach(check => check.checked = eval(check.dataset.checked));
+function refreshChecks() {
+	board.querySelectorAll(".tasks .row input").forEach(check => check.checked = eval(check.dataset.checked));
 	// why eval? because datasets always contain strings, so "false" is a truthy value, so we need to properly evaluate it.
 }
 
 function deleteTask(event) {
 	const row = event.composedPath()[1];
 	row.parentNode.removeChild(row);
+}
+
+function saveToStorage() {
+	localStorage.setItem("counter", taskCounter);
+	let checklists = Array.from(board.querySelectorAll(".checklist"));
+	checklists = checklists.map(checklist => Checklist.fromHTML(checklist));
+	localStorage.setItem("checklists", JSON.stringify(checklists));
+}
+
+function getFromStorage() {
+	taskCounter = localStorage.getItem("counter");
+	const json = JSON.parse(localStorage.getItem("checklists"));
+	const objs = json.map(obj => Checklist.fromObj(obj));
+	board.innerHTML = objs.map(checklist => checklist.toHTML()).join("");
+	board.querySelectorAll(".tasks").forEach(tasks => refreshChecks(tasks));
 }
 
 function handleBoardClicks(event) {
@@ -134,6 +216,7 @@ function handleBoardClicks(event) {
 	if (event.target.matches(".color-box")) changeColor(event);
 	if (event.target.matches(".tasks .row .delete-task")) deleteTask(event);
 	if (event.target.matches(".tasks .row input")) mapTaskCheck(event);
+	saveToStorage();
 }
 
 function handleBoardKeys(event) {
@@ -150,7 +233,10 @@ function handleBoardKeys(event) {
 		addTask(event.composedPath()[2], event.target.value);
 		event.target.value = "";
 	}
+
+	saveToStorage();
 }
+
 newChecklistButton.addEventListener("click", newChecklist);
 board.addEventListener("click", handleBoardClicks);
 board.addEventListener("keydown", handleBoardKeys);

@@ -45,20 +45,24 @@ class Checklist {
 			<a class="remove">Elimina</a>
 		</div>
 		<div class="color-picker">
-			<div class="color-box bg-white active"></div>
-			<div class="color-box bg-red"></div>
-			<div class="color-box bg-pink"></div>
-			<div class="color-box bg-purple"></div>
-			<div class="color-box bg-blue"></div>
-			<div class="color-box bg-cyan"></div>
-			<div class="color-box bg-green"></div>
-			<div class="color-box bg-yellow"></div>
-			<div class="color-box bg-orange"></div>
-			<div class="color-box bg-bley"></div>
-			<div class="color-box bg-grey"></div>
-			<div class="color-box bg-dark"></div>
+			<div class="color-box bg-white ${this._isColorActive("bg-white")}"></div>
+			<div class="color-box bg-red ${this._isColorActive("bg-red")}"></div>
+			<div class="color-box bg-pink ${this._isColorActive("bg-pink")}"></div>
+			<div class="color-box bg-purple ${this._isColorActive("bg-purple")}"></div>
+			<div class="color-box bg-blue ${this._isColorActive("bg-blue")}"></div>
+			<div class="color-box bg-cyan ${this._isColorActive("bg-cyan")}"></div>
+			<div class="color-box bg-green ${this._isColorActive("bg-green")}"></div>
+			<div class="color-box bg-yellow ${this._isColorActive("bg-yellow")}"></div>
+			<div class="color-box bg-orange ${this._isColorActive("bg-orange")}"></div>
+			<div class="color-box bg-bley ${this._isColorActive("bg-bley")}"></div>
+			<div class="color-box bg-grey ${this._isColorActive("bg-grey")}"></div>
+			<div class="color-box bg-dark ${this._isColorActive("bg-dark")}"></div>
 		</div>
 	</div>`;
+	}
+
+	_isColorActive(color) {
+		return this.color == color ? "active" : "";
 	}
 	
 	toString() {
@@ -201,7 +205,7 @@ function saveToStorage() {
 }
 
 function getFromStorage() {
-	taskCounter = localStorage.getItem("counter");
+	taskCounter = parseInt(localStorage.getItem("counter")) || 0;
 	const json = JSON.parse(localStorage.getItem("checklists"));
 	const objs = json.map(obj => Checklist.fromObj(obj));
 	board.innerHTML = objs.map(checklist => checklist.toHTML()).join("");

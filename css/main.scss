@@ -420,7 +420,7 @@ header {
 
 .bg-grey {
     background-color: $grey;
-    color: $dark;
+    color: #fff;
 
     .invert { @include invert() };
     @include lightMenuContent();

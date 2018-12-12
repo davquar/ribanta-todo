@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>RIBANTA TO-DO</title>
+<title>Ribanta To-Do | A simple to-do list app</title>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,58 +13,12 @@
     <div class="container">
         <header>
             <h1>Ribanta To-Do</h1>
-            <P>Questa è la tua to-do list. Bravo.</P>
+            <p>A simple to-do list app. Made with pure Javascript (ES6) and SASS.</p>
         </header>
     
         <div id="content">
           <button id="btn-createList" class="solid"><span class="add-icon">+</span><span class="button-label">Nuova Checklist</span></button>
-            <div id="board">
-                <div class="checklist bg-white" data-status="showTasks">
-                    <div class="header">
-                        <div class="name smallTitle" onfocus="document.execCommand('selectAll', false, null);" onblur="notEditable()">Spesa</div>
-                        <a><div class="menu invert"></div></a>
-                    </div>
-                    <div class="tasks">
-                        <div class="row">
-                            <input type="checkbox" id="task0">
-                            <label for="task0" class="task-name">Pane</label>
-                            <div class="delete-task invert"></div>
-                        </div>
-                        <div class="row">
-                            <input type="checkbox" id="task1" checked data-checked="true">
-                            <label for="task1" class="task-name">Latte</label>
-                            <div class="delete-task invert"></div>
-                        </div>
-                        <div class="row">
-                            <input type="checkbox" id="task2">
-                            <label for="task2" class="task-name">Pancetta</label>
-                            <div class="delete-task invert"></div>
-                        </div>
-                    </div>
-                    <div class="task-adder">
-                        <input type="text" name="new-task-name" placeholder="Nuovo elemento">
-                    </div>
-                    <div class="menu-content">
-                        <a class="rename">Rinomina</a>
-                        <a class="change-color">Cambia colore</a>
-                        <a class="remove">Elimina</a>
-                    </div>
-                    <div class="color-picker">
-                        <div class="color-box bg-white active"></div>
-                        <div class="color-box bg-red"></div>
-                        <div class="color-box bg-pink"></div>
-                        <div class="color-box bg-purple"></div>
-                        <div class="color-box bg-blue"></div>
-                        <div class="color-box bg-cyan"></div>
-                        <div class="color-box bg-green"></div>
-                        <div class="color-box bg-yellow"></div>
-                        <div class="color-box bg-orange"></div>
-                        <div class="color-box bg-bley"></div>
-                        <div class="color-box bg-grey"></div>
-                        <div class="color-box bg-dark"></div>
-                    </div>
-                </div>
-            </div>  
+            <div id="board"></div>  
         </div>    
     </div>
     <script src="app.js"></script>

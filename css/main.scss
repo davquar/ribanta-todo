@@ -409,7 +409,7 @@ header {
  
 .bg-green {
     background-color: $green;
-    color: $dark;
+    color: #fff;
 
     .invert { @include invert() };
     @include lightMenuContent();

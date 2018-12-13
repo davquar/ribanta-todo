@@ -9,6 +9,20 @@ body {
   background-color: #fafafa;
 }
 
+header {
+  margin: 30px;
+}
+
+header h1 {
+  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
+}
+
+header p {
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
 a,
 button {
   cursor: pointer;

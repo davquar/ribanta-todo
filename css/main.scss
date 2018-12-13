@@ -41,6 +41,20 @@ body {
     background-color: $ultra-light-color;
 }
 
+header {
+    margin: 30px;
+    
+    h1 {
+        text-transform: uppercase;
+        font-variant-caps: all-small-caps;
+    }
+
+    p {
+        font-weight: 300;
+        line-height: 1.4em;
+    }
+}
+
 a,
 button {
     cursor: pointer;

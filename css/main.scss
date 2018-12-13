@@ -46,7 +46,9 @@ header {
     
     h1 {
         text-transform: uppercase;
-        font-variant-caps: all-small-caps;
+        font: normal 24px/26px $font-stack;
+        letter-spacing: 0.4px;
+        font-weight: 900;
     }
 
     p {
@@ -77,6 +79,7 @@ button {
 
     .button-label {
         display: inline-block;
+        letter-spacing: 0.4px;
     }
 
     &.ghost {
@@ -343,6 +346,7 @@ header {
 .smallTitle {
     margin: 0 15px 5px 0;
     text-transform: uppercase;
+    letter-spacing: 0.4px;
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;

@@ -207,8 +207,10 @@ function saveToStorage() {
 function getFromStorage() {
 	taskCounter = parseInt(localStorage.getItem("counter")) || 0;
 	const json = JSON.parse(localStorage.getItem("checklists"));
-	const objs = json.map(obj => Checklist.fromObj(obj));
-	board.innerHTML = objs.map(checklist => checklist.toHTML()).join("");
+	try {
+		const objs = json.map(obj => Checklist.fromObj(obj));
+		board.innerHTML = objs.map(checklist => checklist.toHTML()).join("");
+	} catch(e) { return; }	// happens when the localStorage is empty
 	board.querySelectorAll(".tasks").forEach(tasks => refreshChecks(tasks));
 }
 

@@ -238,7 +238,7 @@ function handleBoardKeys(event) {
 		event.target.contentEditable = false;
 	}
 
-	if (event.target.matches(".task-adder input") && event.which == 13) {
+	if (event.target.matches(".task-adder input") && event.which == 13 && event.target.value != "") {
 		addTask(event.composedPath()[2], event.target.value);
 		event.target.value = "";
 	}

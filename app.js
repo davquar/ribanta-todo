@@ -229,6 +229,9 @@ function handleBoardKeys(event) {
 	// finish editing on Enter key
 	if (event.target.matches(".header .name") && event.which == 13) {
 		event.target.contentEditable = false;
+		if (event.target.innerHTML == "") {
+			event.target.innerHTML = "nuova checklist";
+		}
 	}
 
 	if (event.target.matches(".tasks .row label") && event.which == 13) {

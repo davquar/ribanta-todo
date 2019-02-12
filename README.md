@@ -1,2 +1,2 @@
 # ribanta-todo
-A simple HTML5 To-Do List app for an university project
+A simple [pure Javascript to-do List app](https://fortym2.github.io/ribanta-todo/) for an university project

@@ -37,12 +37,12 @@ class Checklist {
 			${this.tasks.map(task => task.toHTML()).join("")}
 		</div>
 		<div class="task-adder">
-			<input type="text" name="new-task-name" placeholder="Nuovo elemento">
+			<input type="text" name="new-task-name" placeholder="New item">
 		</div>
 		<div class="menu-content">
-			<a class="rename">Rinomina</a>
-			<a class="change-color">Cambia colore</a>
-			<a class="remove">Elimina</a>
+			<a class="rename">Rename</a>
+			<a class="change-color">Change color</a>
+			<a class="remove">Delete</a>
 		</div>
 		<div class="color-picker">
 			<div class="color-box bg-white ${this._isColorActive("bg-white")}"></div>

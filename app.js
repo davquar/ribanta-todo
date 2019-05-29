@@ -107,7 +107,7 @@ class Task {
 let taskCounter = 2;
 
 function newChecklist() {
-	board.innerHTML += new Checklist("Nuova checklist", "bg-white", []).toHTML();
+	board.innerHTML += new Checklist("New checklist", "bg-white", []).toHTML();
 	// call it with null event, to set the focus on the name of the newly added checklist
 	toggleRename(null);
 	refreshChecks();
